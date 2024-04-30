@@ -9,19 +9,17 @@ class BugReport(models.Model):
         ('In_progress', 'В работе'),
         ('Completed', 'Завершена')
     ]
-
     PRIORITY_CHOISES = [
         ('Low', 'Низкий'),
         ('Middle', 'Средний'),
-        ('Height', 'Высокий'),
-        ('Very_height', 'Очень высокий'),
-        ('Critical', 'Критический')
+        ('High', 'Высокий')
     ]
 
     title = models.CharField(max_length=100)
     description = models.TextField()
     project = models.ForeignKey(
-        Project, on_delete=models.CASCADE
+        Project,
+        on_delete=models.CASCADE
     )
     task = models.ForeignKey(
         Task,
@@ -52,19 +50,17 @@ class FeatureRequest(models.Model):
         ('Accepted', 'Принято'),
         ('Rejected', 'Отклонено')
     ]
-
     PRIORITY_CHOISES = [
         ('Low', 'Низкий'),
         ('Middle', 'Средний'),
-        ('Height', 'Высокий'),
-        ('Very_height', 'Очень высокий'),
-        ('Critical', 'Критический')
+        ('High', 'Высокий')
     ]
 
     title = models.CharField(max_length=100)
     description = models.TextField()
     project = models.ForeignKey(
-        Project, on_delete=models.CASCADE
+        Project,
+        on_delete=models.CASCADE
     )
     task = models.ForeignKey(
         Task,
