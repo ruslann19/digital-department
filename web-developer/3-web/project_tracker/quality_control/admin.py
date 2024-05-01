@@ -33,7 +33,6 @@ class BugReportAdmin(admin.ModelAdmin):
     )
     readonly_fields = ('created_at', 'updated_at',)
 
-
 @admin.register(FeatureRequest)
 class FeatureRequestAdmin(admin.ModelAdmin):
     list_display = ('title', 'project', 'task', 'created_at')
